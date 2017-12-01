@@ -22,11 +22,6 @@ public class Calculator {
 
 	public void arithmetics() {
 		while(true) {
-			System.out.println("1.Add");
-			System.out.println("2.Subtract");
-			System.out.println("3.Multiply");
-			System.out.println("4. Divide");
-			System.out.println("5.Exit");
 
 			Scanner scanner = new Scanner(System.in);
 			int menu = scanner.nextInt();
@@ -38,10 +33,10 @@ public class Calculator {
 				add(augend,added);
 				break;
 			case 2: 
-				
+
 				break;
 			case 3:
-				
+
 				break;
 			}
 		}
@@ -51,6 +46,30 @@ public class Calculator {
 		double sum = augend + added;
 		System.out.println("sum" +sum);
 	}
+	public void ConvertUnit() {
+		while(true) {
+			System.out.println("1.Add");
+			System.out.println("2.Subtract");
+			System.out.println("3.Multiply");
+			System.out.println("4. Divide");
+			System.out.println("5.Exit");
 
+			Scanner scanner = new Scanner(System.in);
+			int menu = scanner.nextInt();
 
+			switch(menu) {
+			case 6: 
+				double kg = scanner.nextDouble();
+				convertPoundIntoKg(kg);
+
+			}
+
+		}
+	}
+	public void convertPoundIntoKg(double kg) {
+		double pound =2.20462262*kg;
+		System.out.println("kg -> pound" + pound);
+		
+		
+}
 }
