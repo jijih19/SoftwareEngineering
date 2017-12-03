@@ -23,15 +23,8 @@ public class Calculator {
 
 	public void arithmetics() {
 		while(true) {
-			System.out.println("1.Add");
-			System.out.println("2.Subtract");
-			System.out.println("3.Multiply");
-			System.out.println("4. Divide");
-			System.out.println("5.Exit");
-
 			Scanner scanner = new Scanner(System.in);
 			int menu = scanner.nextInt();
-
 			switch(menu) {
 			case 1: 
 				double augend = scanner.nextDouble();
@@ -72,7 +65,8 @@ public class Calculator {
 				convertPoundIntoKg(pound);
 				break;
 			case 2: 
-				
+				double kg = scanner.nextDouble();
+				convertKgIntoPound(kg);
 				break;
 			case 3:
 				
@@ -112,5 +106,10 @@ public class Calculator {
 	public void convertFerenheitToCelcius(double ferenheit) {
 		double result = (ferenheit-32) / 1.8;
 		System.out.println("¡ÆF : " + ferenheit + " -> ¡ÆC : " + result);
+	}
+
+	public void convertKgIntoPound(double kg) {
+		double pound =2.20462262*kg;
+		System.out.println("kg -> pound" + pound);
 	}
 }
