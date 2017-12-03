@@ -1,4 +1,4 @@
-import java.util.*;
+﻿import java.util.*;
 
 public class Calculator {
 	public void run() {
@@ -38,7 +38,7 @@ public class Calculator {
 				double multiplicand = scanner.nextDouble();
 				multiply(multiplier, multiplicand);
 				break;
-			case 4:
+			case 4: 
 				break;
 			case 5:
 				return;
@@ -92,6 +92,10 @@ public class Calculator {
 		double sum = augend + added;
 		System.out.println("sum" + sum);
 	}
+	
+	public void subtract(double minuend, double subtrahend) { 
+		System.out.println("result : " + (minuend - subtrahend));
+	}
 
 	public void multiply(double multiplier, double multiplicand) {
 		double result = multiplier * multiplicand;
@@ -109,9 +113,17 @@ public class Calculator {
 
 	}
 	
+	public void convertInchToCm(double inch) {
+		System.out.println("result : " + (inch * 2.54))
+	}
+	
 	public void convertFerenheitToCelcius(double ferenheit) {
 		double result = (ferenheit - 32) / 1.8;
-		System.out.println("��F : " + ferenheit + " -> ��C : " + result);
+		System.out.println("℉ : " + ferenheit + " -> ℃ : " + result);
+	}
+	
+	public void convertCelciusToFerenheit(double celcius) {
+		System.out.println("result : " + (celcius * 1.8 + 32))
 	}
 	
 }
