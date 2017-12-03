@@ -32,6 +32,10 @@ public class Calculator {
 				add(augend, added);
 				break;
 			case 2:
+				System.out.print("두 실수를 입력하세요 : ");
+				double minuend = scanner.nextDouble();
+				double subtrahend = scanner.nextDouble();
+				subtract(minuend, subtrahend);
 				break;
 			case 3:
 				double multiplier = scanner.nextDouble();
@@ -72,7 +76,9 @@ public class Calculator {
 				convertKgIntoPound(kg);
 				break;
 			case 3:
-				
+				System.out.println("변환할 값을 입력하세요. :");
+				double inch = scanner.nextDouble();
+				convertInchToCm(inch);
 				break;
 			case 4:
 				double cm = scanner.nextDouble();
@@ -83,11 +89,12 @@ public class Calculator {
 				convertFerenheitToCelcius(ferenheit);
 				break;
 			case 6:
-
+				System.out.println("변환할 값을 입력하세요. :");
+				double celcius = scanner.nextDouble();
+				convertCelciusToFerenheit(celcius);
 				break;
 			case 7:
 				return;
-
 			}
 		}
 	}
