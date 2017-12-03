@@ -76,6 +76,7 @@ public class Calculator {
 				convertKgIntoPound(kg);
 				break;
 			case 3:
+
 				System.out.println("변환할 값을 입력하세요. :");
 				double inch = scanner.nextDouble();
 				convertInchToCm(inch);
