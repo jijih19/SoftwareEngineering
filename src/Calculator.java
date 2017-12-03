@@ -23,6 +23,10 @@ public class Calculator {
 
 	public void arithmetics() {
 		while(true) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae76fdb27c13647c3de9e4a563b789355c34bc71
 			Scanner scanner = new Scanner(System.in);
 			int menu = scanner.nextInt();
 			switch(menu) {
@@ -32,11 +36,18 @@ public class Calculator {
 				add(augend,added);
 				break;
 			case 2: 
+<<<<<<< HEAD
 				break;
 			case 3:
 				double multiplier = scanner.nextDouble();
 				double multiplicand = scanner.nextDouble();
 				multiply(multiplier,multiplicand);
+=======
+
+				break;
+			case 3:
+
+>>>>>>> ae76fdb27c13647c3de9e4a563b789355c34bc71
 				break;
 			case 4:
 				break;
@@ -92,6 +103,7 @@ public class Calculator {
 		double sum = augend + added;
 		System.out.println("sum" +sum);
 	}
+<<<<<<< HEAD
 	
 	public void multiply(double multiplier,double multiplicand) {
 		double result = multiplier * multiplicand;
@@ -112,4 +124,32 @@ public class Calculator {
 		double pound =2.20462262*kg;
 		System.out.println("kg -> pound" + pound);
 	}
+=======
+	public void ConvertUnit() {
+		while(true) {
+			System.out.println("1.Add");
+			System.out.println("2.Subtract");
+			System.out.println("3.Multiply");
+			System.out.println("4. Divide");
+			System.out.println("5.Exit");
+
+			Scanner scanner = new Scanner(System.in);
+			int menu = scanner.nextInt();
+
+			switch(menu) {
+			case 6: 
+				double kg = scanner.nextDouble();
+				convertPoundIntoKg(kg);
+
+			}
+
+		}
+	}
+	public void convertPoundIntoKg(double kg) {
+		double pound =2.20462262*kg;
+		System.out.println("kg -> pound" + pound);
+		
+		
+}
+>>>>>>> ae76fdb27c13647c3de9e4a563b789355c34bc71
 }
