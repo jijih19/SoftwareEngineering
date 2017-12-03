@@ -12,6 +12,9 @@ public class MemoManager {
 			case 1:
 				createMemo();
 				break;
+			case 2 :
+				updateMemo();
+				break;
 			case 4:
 				return;
 			default:
@@ -26,6 +29,16 @@ public class MemoManager {
 		String newString = scanner.nextLine();
 		memo.add(newString);
 	}
+	
+	public void updateMemo() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("업데이트하고 싶은 메모 번호를 입력하세요 : ");
+		int num = scanner.nextInt();
+		System.out.println("업데이트하고 싶은 내용을 입력하세요 : ");
+		String updatedString = scanner.nextLine();
+		memo.set(num, updatedString);
+		
+	}
 
 	private void printMemo() {
 		System.out.println("1.Create");
@@ -34,5 +47,4 @@ public class MemoManager {
 		System.out.println("4.Exit");
 		System.out.println(">>");
 	}
-
 }
