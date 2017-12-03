@@ -95,7 +95,6 @@ public class Calculator {
 				break;
 			case 7:
 				return;
-
 			}
 		}
 	}
