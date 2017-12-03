@@ -15,6 +15,8 @@ public class MemoManager {
 			case 2 :
 				updateMemo();
 				break;
+			case 3 :
+				deleteMemo();
 			case 4:
 				return;
 			default:
@@ -39,7 +41,12 @@ public class MemoManager {
 		memo.set(num, updatedString);
 		
 	}
-
+	public void deleteMemo() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("삭제할 메모 번호를 입력하세요 :");
+		int num = scanner.nextInt();
+		System.out.println("삭제되었습니다.");
+	}
 	private void printMemo() {
 		System.out.println("1.Create");
 		System.out.println("2.Update");
