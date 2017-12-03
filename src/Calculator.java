@@ -39,6 +39,9 @@ public class Calculator {
 				multiply(multiplier, multiplicand);
 				break;
 			case 4: 
+				double divisor = scanner.nextDouble();
+				double dividend = scanner.nextDouble();
+				divide(divisor, dividend);
 				break;
 			case 5:
 				return;
@@ -69,10 +72,11 @@ public class Calculator {
 				convertKgIntoPound(kg);
 				break;
 			case 3:
-
+				
 				break;
 			case 4:
-
+				double cm = scanner.nextDouble();
+				convertCmtoInch(cm);
 				break;
 			case 5:
 				double ferenheit = scanner.nextDouble();
@@ -101,7 +105,14 @@ public class Calculator {
 		double result = multiplier * multiplicand;
 		System.out.println("result of multiply : " + result);
 	}
-
+	public void divide(double divisor, double dividend) {
+		if(divisor != 0) {
+			double result = dividend/divisor;
+			System.out.println("result of divide : " + result);
+		}
+		else
+			System.out.println("나누는 수는 0이 될 수 없습니다."));
+	}
 	public void convertPoundIntoKg(double pound) {
 		double result = pound * 0.453592;
 		System.out.println("pound : " + pound + " -> kg : " + result);
@@ -115,6 +126,10 @@ public class Calculator {
 	
 	public void convertInchToCm(double inch) {
 		System.out.println("result : " + (inch * 2.54))
+	}
+	
+	public void convertCmToInch(double cm) {
+		System.out.println("result : " + (cm * 0.39))
 	}
 	
 	public void convertFerenheitToCelcius(double ferenheit) {
