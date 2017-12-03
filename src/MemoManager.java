@@ -34,11 +34,12 @@ public class MemoManager {
 		Scanner scanner = new Scanner(System.in);
 		for(int i = 0; i < memo.size(); i++)
 			System.out.println((i + 1)". " + memo.get(i));
-		System.out.println("업데이트하고 싶은 메모 번호를 입력하세요 : ");
+		System.out.println("수정하고 싶은 메모 번호를 입력하세요 : ");
 		int num = scanner.nextInt();
-		System.out.println("업데이트하고 싶은 내용을 입력하세요 : ");
+		System.out.println("수정할 내용을 입력하세요 : ");
 		String updatedString = scanner.nextLine();
 		memo.set(num - 1, updatedString);
+		System.out.println("수정되었습니다.");
 		
 	}
 
