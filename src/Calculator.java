@@ -52,8 +52,8 @@ public class Calculator {
 			System.out.println("2.kg -> pound");
 			System.out.println("3.inch ->  cm");
 			System.out.println("4.cm -> inch");
-			System.out.println("5.��F -> ��C");
-			System.out.println("6.��C -> ��F");
+			System.out.println("5.ferenheit -> celcius");
+			System.out.println("6.celcius -> ferenheit");
 			System.out.println("7.Exit");
 
 			Scanner scanner = new Scanner(System.in);
@@ -103,35 +103,15 @@ public class Calculator {
 		System.out.println("pound : " + pound + " -> kg : " + result);
 	}
 
-	public void convertFerenheitToCelcius(double ferenheit) {
-		double result = (ferenheit - 32) / 1.8;
-		System.out.println("��F : " + ferenheit + " -> ��C : " + result);
-	}
-
-	public void ConvertUnit() {
-		while (true) {
-			System.out.println("1.Add");
-			System.out.println("2.Subtract");
-			System.out.println("3.Multiply");
-			System.out.println("4. Divide");
-			System.out.println("5.Exit");
-
-			Scanner scanner = new Scanner(System.in);
-			int menu = scanner.nextInt();
-
-			switch (menu) {
-			case 6:
-				double kg = scanner.nextDouble();
-				convertPoundIntoKg(kg);
-
-			}
-
-		}
-	}
-
 	public void convertKgIntoPound(double kg) {
 		double pound = 2.20462262 * kg;
 		System.out.println("kg -> pound" + pound);
 
 	}
+	
+	public void convertFerenheitToCelcius(double ferenheit) {
+		double result = (ferenheit - 32) / 1.8;
+		System.out.println("��F : " + ferenheit + " -> ��C : " + result);
+	}
+	
 }
