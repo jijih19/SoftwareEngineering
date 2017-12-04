@@ -8,10 +8,10 @@ public class AccountBook {
 		Scanner scanner = new Scanner(System.in);
 		int menu;
 		while (true) {
-			System.out.println("1. Create");
-			System.out.println("2. Update");
-			System.out.println("3. Delete");
-			System.out.println("4. Exit");
+			System.out.println("1.Create");
+			System.out.println("2.Update");
+			System.out.println("3.Delete");
+			System.out.println("4.Exit");
 			menu = scanner.nextInt();
 			switch (menu) {
 			case 1:
@@ -24,13 +24,15 @@ public class AccountBook {
 				CreateAccount(date, item, price);
 				break;
 			case 2:
-				System.out.println("날짜를 입력하세요 : ");
+				System.out.println("수정할 내용의 해당 날짜를 입력하세요 : ");
 				date = scanner.next();
 				UpdateAccount(date);
 
 				break;
 			case 3:
-				// DeleteAccount();
+				System.out.println("제거할 내용의 해당 날짜를 입력하세요 : ");
+				date = scanner.next();
+				DeleteAccount(date);
 				break;
 			case 4:
 				return;
