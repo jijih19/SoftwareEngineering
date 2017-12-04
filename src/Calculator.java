@@ -27,18 +27,25 @@ public class Calculator {
 			int menu = scanner.nextInt();
 			switch (menu) {
 			case 1:
+				System.out.print("두 실수를 입력하세요 : ");
 				double augend = scanner.nextDouble();
 				double added = scanner.nextDouble();
 				add(augend, added);
 				break;
 			case 2:
+				System.out.print("두 실수를 입력하세요 : ");
+				double minuend = scanner.nextDouble();
+				double subtrahend = scanner.nextDouble();
+				subtract(minuend, subtrahend);
 				break;
 			case 3:
+				System.out.print("두 실수를 입력하세요 : ");
 				double multiplier = scanner.nextDouble();
 				double multiplicand = scanner.nextDouble();
 				multiply(multiplier, multiplicand);
 				break;
 			case 4: 
+				System.out.print("두 실수를 입력하세요 : ");
 				double divisor = scanner.nextDouble();
 				double dividend = scanner.nextDouble();
 				divide(divisor, dividend);
@@ -64,30 +71,37 @@ public class Calculator {
 
 			switch (menu) {
 			case 1:
+				System.out.println("변환할 값을 입력하세요. :");
 				double pound = scanner.nextDouble();
 				convertPoundIntoKg(pound);
 				break;
 			case 2:
+				System.out.println("변환할 값을 입력하세요. :");
 				double kg = scanner.nextDouble();
 				convertKgIntoPound(kg);
 				break;
 			case 3:
-				
+				System.out.println("변환할 값을 입력하세요. :");
+				double inch = scanner.nextDouble();
+				convertInchToCm(inch);
 				break;
 			case 4:
+				System.out.println("변환할 값을 입력하세요. :");
 				double cm = scanner.nextDouble();
-				convertCmtoInch(cm);
+				convertCmToInch(cm);
 				break;
 			case 5:
+				System.out.println("변환할 값을 입력하세요. :");
 				double ferenheit = scanner.nextDouble();
 				convertFerenheitToCelcius(ferenheit);
 				break;
 			case 6:
-
+				System.out.println("변환할 값을 입력하세요. :");
+				double celcius = scanner.nextDouble();
+				convertCelciusToFerenheit(celcius);
 				break;
 			case 7:
 				return;
-
 			}
 		}
 	}
@@ -111,7 +125,7 @@ public class Calculator {
 			System.out.println("result of divide : " + result);
 		}
 		else
-			System.out.println("나누는 수는 0이 될 수 없습니다."));
+			System.out.println("나누는 수는 0이 될 수 없습니다.");
 	}
 	public void convertPoundIntoKg(double pound) {
 		double result = pound * 0.453592;
@@ -125,11 +139,11 @@ public class Calculator {
 	}
 	
 	public void convertInchToCm(double inch) {
-		System.out.println("result : " + (inch * 2.54))
+		System.out.println("result : " + (inch * 2.54));
 	}
 	
 	public void convertCmToInch(double cm) {
-		System.out.println("result : " + (cm * 0.39))
+		System.out.println("result : " + (cm * 0.39));
 	}
 	
 	public void convertFerenheitToCelcius(double ferenheit) {
@@ -138,7 +152,7 @@ public class Calculator {
 	}
 	
 	public void convertCelciusToFerenheit(double celcius) {
-		System.out.println("result : " + (celcius * 1.8 + 32))
+		System.out.println("result : " + (celcius * 1.8 + 32));
 	}
 	
 }
