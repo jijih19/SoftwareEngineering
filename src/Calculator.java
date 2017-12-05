@@ -7,6 +7,7 @@ public class Calculator {
 			System.out.println("1.Arithmetics");
 			System.out.println("2.Convert Unit");
 			System.out.println("3.Exit");
+			System.out.print(">>");
 			int menu = scanner.nextInt();
 			switch (menu) {
 			case 1:
@@ -24,6 +25,13 @@ public class Calculator {
 	public void arithmetics() {
 		while (true) {
 			Scanner scanner = new Scanner(System.in);
+			System.out.println("1.Add");
+			System.out.println("2.Subtract");
+			System.out.println("3.Multiply");
+			System.out.println("4.Divide");
+			System.out.println("5.Exit");
+			System.out.print(">>");
+			
 			int menu = scanner.nextInt();
 			switch (menu) {
 			case 1:
@@ -65,6 +73,7 @@ public class Calculator {
 			System.out.println("5.ferenheit -> celcius");
 			System.out.println("6.celcius -> ferenheit");
 			System.out.println("7.Exit");
+			System.out.print(">>");
 
 			Scanner scanner = new Scanner(System.in);
 			int menu = scanner.nextInt();

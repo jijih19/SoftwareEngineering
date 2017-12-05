@@ -2,37 +2,29 @@ import java.util.*;
 
 public class AccountBook {
 	static int Accountnum = 0;
-	AccountData Account[] = new AccountData[100];// 입력할 수 있는 Account는 100개
+	private ArrayList<AccountData> Account = new ArrayList<AccountData>();
 
 	public void run() {
 		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
 		int menu;
 		while (true) {
 			System.out.println("1.Create");
 			System.out.println("2.Update");
 			System.out.println("3.Delete");
 			System.out.println("4.Exit");
+			System.out.print(">>");
+			
 			menu = scanner.nextInt();
 			switch (menu) {
 			case 1:
-				System.out.println("Date :");
-				String date = scanner.next();
-				System.out.println("Item :");
-				String item = scanner.next();
-				System.out.println("Price :");
-				int price = scanner.nextInt();
-				CreateAccount(date, item, price);
+				CreateAccount();
 				break;
 			case 2:
-				System.out.println("수정할 내용의 해당 날짜를 입력하세요 : ");
-				date = scanner.next();
-				UpdateAccount(date);
-
+				UpdateAccount();
 				break;
 			case 3:
-				System.out.println("제거할 내용의 해당 날짜를 입력하세요 : ");
-				date = scanner.next();
-				DeleteAccount(date);
+				DeleteAccount();
 				break;
 			case 4:
 				return;
@@ -41,56 +33,72 @@ public class AccountBook {
 		}
 	}
 
-	public void CreateAccount(String date, String item, int price) {
-		if (Accountnum < 100) {
-			Account[Accountnum].date = date;
-			Account[Accountnum].item = item;
-			Account[Accountnum].price = price;
-			Accountnum++;
-			System.out.println("저장되었습니다.");
-		} else
-			System.out.println("저장 실패하였습니다.");
+	public void CreateAccount() {
+		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
+		System.out.print("Date :");
+		String date = scanner2.nextLine();
+		System.out.print("Item :");
+		String item = scanner.next();
+		System.out.print("Price :");
+		int price = scanner2.nextInt();
+		
+		AccountData data = new AccountData(date,item,price);
+		Account.add(data);
+		System.out.println("저장되었습니다.");
 
 	}
 
-	public void UpdateAccount(String date) {
-		for (int i = 0; i < Accountnum; i++) {
-			if (Account[i].date == date) {
-				System.out.print("Item :" + Account[i].item);
-				System.out.print("Price :" + Account[i].price);
+	public void UpdateAccount() {
+		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
+		for(int i = 0; i < Account.size(); i++){
+			AccountData data = Account.get(i);
+			System.out.println("Data : "+data.date + ", Item : "+data.item + ", Price : "+data.price);
+		}
+		System.out.print("날짜를 입력하세요 : ");
+		String updatedate = scanner2.nextLine();
+		for(int i = 0; i < Account.size(); i++){
+			AccountData data = Account.get(i);
+			if(data.date.equals(updatedate)){
+				System.out.print("수정할 Date를 입력하세요 : ");
+				data.date = scanner2.nextLine();
+				System.out.print("수정할 Item을 입력하세요 : ");
+				data.item = scanner.next();
+				System.out.print("수정할 Price를 입력하세요 : ");
+				data.price = scanner2.nextInt();
+				System.out.println("수정되었습니다.");
 			}
-			Scanner scanner = new Scanner(System.in);
-			Account[i].date = scanner.next();
-			Account[i].item = scanner.next();
-			Account[i].price = scanner.nextInt();
-		}
-
+		}		
 	}
 
-	public void DeleteAccount(String date) {
-		for (int i = 0; i < Accountnum; i++) {
-			if (Account[i].date == date) {
-				System.out.print("Item : " + Account[i].item);
-				System.out.print("Price : " + Account[i].price);
-				delete(i);
+	public void DeleteAccount() {
+		Scanner scanner = new Scanner(System.in);
+		AccountData deletedata;
+		for(int i = 0; i < Account.size(); i++){
+			AccountData data = Account.get(i);
+			System.out.println("Data : "+data.date + ", Item : "+data.item + ", Price : "+data.price);
+		}
+		System.out.print("날짜를 입력하세요 : ");
+		String deletedate = scanner.nextLine();
+		for(int i = 0; i < Account.size(); i++){
+			deletedata = Account.get(i);
+			if(deletedata.date.equals(deletedate)){
+				Account.remove(i);
+				System.out.println("삭제되었습니다.");
 			}
-
 		}
-
 	}
 
-	private void delete(int i) {
-		for (int j = i; j < Accountnum; j++) {
-			Account[i].date = Account[i + 1].date;
-			Account[i].item = Account[i + 1].item;
-			Account[i].price = Account[i + 1].price;
-		}
-		Accountnum--;
-	}
+}
 
-	class AccountData {
-		String date;
-		String item;
-		int price;
+class AccountData {
+	String date;
+	String item;
+	int price;
+	AccountData(String date, String item, int price) {
+		this.date = date;
+		this.item = item;
+		this.price = price;
 	}
 }
