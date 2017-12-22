@@ -148,7 +148,7 @@ public class Calculator {
 	}
 
 	public double convertKgIntoPound(double kg) {
-		return 2.20462262 * kg;
+		return 2.204622 * kg;
 	}
 	
 	public void convertInchToCm(double inch) {
