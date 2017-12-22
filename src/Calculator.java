@@ -33,12 +33,14 @@ public class Calculator {
 			System.out.print(">>");
 			
 			int menu = scanner.nextInt();
+			double result;
 			switch (menu) {
 			case 1:
 				System.out.print("두 실수를 입력하세요 : ");
 				double augend = scanner.nextDouble();
 				double added = scanner.nextDouble();
-				add(augend, added);
+				result = add(augend, added);
+				System.out.println("result of add : " + result);
 				break;
 			case 2:
 				System.out.print("두 실수를 입력하세요 : ");
@@ -50,7 +52,9 @@ public class Calculator {
 				System.out.print("두 실수를 입력하세요 : ");
 				double multiplier = scanner.nextDouble();
 				double multiplicand = scanner.nextDouble();
-				multiply(multiplier, multiplicand);
+				result = multiply(multiplier, multiplicand);
+				System.out.println("result of multiply : " + result);
+				
 				break;
 			case 4: 
 				System.out.print("두 실수를 입력하세요 : ");
@@ -77,17 +81,19 @@ public class Calculator {
 
 			Scanner scanner = new Scanner(System.in);
 			int menu = scanner.nextInt();
-
+			double result;
 			switch (menu) {
 			case 1:
 				System.out.println("변환할 값을 입력하세요. :");
 				double pound = scanner.nextDouble();
-				convertPoundIntoKg(pound);
+				result = convertPoundIntoKg(pound);
+				System.out.println("pound : " + pound + " -> kg : " + result);
 				break;
 			case 2:
 				System.out.println("변환할 값을 입력하세요. :");
 				double kg = scanner.nextDouble();
-				convertKgIntoPound(kg);
+				result = convertKgIntoPound(kg);
+				System.out.println("kg : " + kg + "-> pound : " + result);
 				break;
 			case 3:
 				System.out.println("변환할 값을 입력하세요. :");
@@ -102,7 +108,8 @@ public class Calculator {
 			case 5:
 				System.out.println("변환할 값을 입력하세요. :");
 				double ferenheit = scanner.nextDouble();
-				convertFerenheitToCelcius(ferenheit);
+				result = convertFerenheitToCelcius(ferenheit);
+				System.out.println("℉ : " + ferenheit + " -> ℃ : " + result);
 				break;
 			case 6:
 				System.out.println("변환할 값을 입력하세요. :");
@@ -115,19 +122,18 @@ public class Calculator {
 		}
 	}
 
-	public void add(double augend, double added) {
-		double sum = augend + added;
-		System.out.println("sum" + sum);
+	public double add(double augend, double added) {
+		return augend + added;
 	}
 	
 	public void subtract(double minuend, double subtrahend) { 
 		System.out.println("result : " + (minuend - subtrahend));
 	}
 
-	public void multiply(double multiplier, double multiplicand) {
-		double result = multiplier * multiplicand;
-		System.out.println("result of multiply : " + result);
+	public double multiply(double multiplier, double multiplicand) {
+		 return multiplier * multiplicand;
 	}
+	
 	public void divide(double divisor, double dividend) {
 		if(divisor != 0) {
 			double result = dividend/divisor;
@@ -136,15 +142,13 @@ public class Calculator {
 		else
 			System.out.println("나누는 수는 0이 될 수 없습니다.");
 	}
-	public void convertPoundIntoKg(double pound) {
-		double result = pound * 0.453592;
-		System.out.println("pound : " + pound + " -> kg : " + result);
+	
+	public double convertPoundIntoKg(double pound) {
+		return pound * 0.453592;
 	}
 
-	public void convertKgIntoPound(double kg) {
-		double pound = 2.20462262 * kg;
-		System.out.println("kg -> pound" + pound);
-
+	public double convertKgIntoPound(double kg) {
+		return 2.20462262 * kg;
 	}
 	
 	public void convertInchToCm(double inch) {
@@ -155,9 +159,8 @@ public class Calculator {
 		System.out.println("result : " + (cm * 0.39));
 	}
 	
-	public void convertFerenheitToCelcius(double ferenheit) {
-		double result = (ferenheit - 32) / 1.8;
-		System.out.println("℉ : " + ferenheit + " -> ℃ : " + result);
+	public double convertFerenheitToCelcius(double ferenheit) {
+		return (ferenheit - 32) / 1.8;
 	}
 	
 	public void convertCelciusToFerenheit(double celcius) {

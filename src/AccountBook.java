@@ -1,20 +1,35 @@
+import java.io.*;
 import java.util.*;
 
 public class AccountBook {
 	static int Accountnum = 0;
 	private ArrayList<AccountData> Account = new ArrayList<AccountData>();
 
-	public void run() {
+	public void run() throws IOException {
 		Scanner scanner = new Scanner(System.in);
 		Scanner scanner2 = new Scanner(System.in);
 		int menu;
+		FileOutputStream fout = null;
+		ObjectOutputStream oout = null;
+		FileInputStream fin = null;
+		ObjectInputStream oin = null;
+		File f = new File("Account.dat");
+		try {
+			fout = new FileOutputStream(f);
+			oout = new ObjectOutputStream(fout);
+			oout.writeObject(Account);
+			System.out.println(f.getName()+"에 저장되었습니다.");
+			fout.close();
+			oout.close();
+		} catch (FileNotFoundException e) {
+		}
 		while (true) {
 			System.out.println("1.Create");
 			System.out.println("2.Update");
 			System.out.println("3.Delete");
 			System.out.println("4.Exit");
 			System.out.print(">>");
-			
+
 			menu = scanner.nextInt();
 			switch (menu) {
 			case 1:
@@ -31,6 +46,8 @@ public class AccountBook {
 
 			}
 		}
+
+
 	}
 
 	public void CreateAccount() {
@@ -42,7 +59,7 @@ public class AccountBook {
 		String item = scanner.next();
 		System.out.print("Price :");
 		int price = scanner2.nextInt();
-		
+
 		AccountData data = new AccountData(date,item,price);
 		Account.add(data);
 		System.out.println("저장되었습니다.");
