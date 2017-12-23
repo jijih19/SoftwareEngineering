@@ -46,7 +46,8 @@ public class Calculator {
 				System.out.print("두 실수를 입력하세요 : ");
 				double minuend = scanner.nextDouble();
 				double subtrahend = scanner.nextDouble();
-				subtract(minuend, subtrahend);
+				result = subtract(minuend, subtrahend);
+				System.out.println("result of subtract : " + result);
 				break;
 			case 3:
 				System.out.print("두 실수를 입력하세요 : ");
@@ -98,7 +99,8 @@ public class Calculator {
 			case 3:
 				System.out.println("변환할 값을 입력하세요. :");
 				double inch = scanner.nextDouble();
-				convertInchToCm(inch);
+				result = convertInchToCm(inch);
+				System.out.println("inch : " + inch + "-> cm : " + result);
 				break;
 			case 4:
 				System.out.println("변환할 값을 입력하세요. :");
@@ -114,7 +116,8 @@ public class Calculator {
 			case 6:
 				System.out.println("변환할 값을 입력하세요. :");
 				double celcius = scanner.nextDouble();
-				convertCelciusToFerenheit(celcius);
+				result = convertCelciusToFerenheit(celcius);
+				System.out.println("℃ : " + celcius + " -> ℉ : " + result);
 				break;
 			case 7:
 				return;
@@ -126,8 +129,8 @@ public class Calculator {
 		return augend + added;
 	}
 	
-	public void subtract(double minuend, double subtrahend) { 
-		System.out.println("result : " + (minuend - subtrahend));
+	public double subtract(double minuend, double subtrahend) { 
+		return minuend - subtrahend;
 	}
 
 	public double multiply(double multiplier, double multiplicand) {
@@ -151,8 +154,8 @@ public class Calculator {
 		return 2.204622 * kg;
 	}
 	
-	public void convertInchToCm(double inch) {
-		System.out.println("result : " + (inch * 2.54));
+	public double convertInchToCm(double inch) {
+		return inch * 2.54;
 	}
 	
 	public void convertCmToInch(double cm) {
@@ -163,8 +166,8 @@ public class Calculator {
 		return (ferenheit - 32) / 1.8;
 	}
 	
-	public void convertCelciusToFerenheit(double celcius) {
-		System.out.println("result : " + (celcius * 1.8 + 32));
+	public double convertCelciusToFerenheit(double celcius) {
+		return celcius * 1.8 + 32;
 	}
 	
 }
