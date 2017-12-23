@@ -61,7 +61,8 @@ public class Calculator {
 				System.out.print("두 실수를 입력하세요 : ");
 				double divisor = scanner.nextDouble();
 				double dividend = scanner.nextDouble();
-				divide(divisor, dividend);
+				result = divide(divisor, dividend);
+				System.out.println("result of divide : " + result);
 				break;
 			case 5:
 				return;
@@ -137,13 +138,8 @@ public class Calculator {
 		 return multiplier * multiplicand;
 	}
 	
-	public void divide(double divisor, double dividend) {
-		if(divisor != 0) {
-			double result = dividend/divisor;
-			System.out.println("result of divide : " + result);
-		}
-		else
-			System.out.println("나누는 수는 0이 될 수 없습니다.");
+	public double divide(double divisor, double dividend) {
+			return dividend/divisor;
 	}
 	
 	public double convertPoundIntoKg(double pound) {

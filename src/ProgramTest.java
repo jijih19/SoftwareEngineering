@@ -1,4 +1,11 @@
 import static org.junit.Assert.*;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class ProgramTest {
@@ -39,5 +46,34 @@ public class ProgramTest {
 		Calculator calc = new Calculator();
 		assertTrue(calc.convertKgIntoPound(7) == 15.432354);
 	}
-
+	
+	@Test
+	public void divideTest() {
+		Calculator calc = new Calculator();
+		assertTrue(calc.divide(4,12) == 3);
+	}
+	@Test
+	public void AccountTest() {
+		AccountBook a = new AccountBook();
+		ArrayList<AccountData> account = new ArrayList<AccountData>();
+		AccountData data = new AccountData("", "", 0);
+		try {
+	         FileWriter file = new FileWriter("./AccountBook.txt");
+	         file.write("1223 " + "å " + 15000 + "\n");
+	         data = new AccountData("1223", "å", 15000);
+	         account.add(data);
+	         file.close();
+	      } catch (IOException e) {
+	         System.out.println(e);
+	      }
+		try {
+	        FileReader reader = new FileReader("./AccountBook.txt");
+	        assertTrue(data.date == "1223");
+	        reader.close();
+	      } catch (FileNotFoundException error) {
+		;
+	} catch (IOException e ) {
+		System.err.println(e);
+		}
+	}
 }
