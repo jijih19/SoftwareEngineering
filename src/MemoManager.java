@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class MemoManager {
-	private ArrayList<String> memo = new ArrayList<String>();
+	public ArrayList<String> memo = new ArrayList<String>();
 
 	public void run() {
 		Scanner scanner = new Scanner(System.in);

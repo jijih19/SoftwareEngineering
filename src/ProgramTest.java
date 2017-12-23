@@ -1,8 +1,15 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class ProgramTest {
+
+	@Test
+	public void createMemoTest() {
+		MemoManager mm = new MemoManager();
+		mm.loadMemo();
+		mm.memo.add("온유");
+		assertEquals(mm.memo.get(0), "온유");
+	}
 	
 	@Test
 	public void subtractTest() {
